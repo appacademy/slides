@@ -8,7 +8,7 @@ import demoText from '../util/demo_text';
 import { parseSlides } from '../util/slides';
 
 const defaultState = {
-  text: demoText,
+  text: window.lectureText || demoText,
   slides: parseSlides(demoText),
   slideIndex: 0
 };

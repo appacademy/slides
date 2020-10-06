@@ -1,0 +1,296 @@
+html, body, #root, .input-container {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  font-family: 'Lato', san-serif;
+}
+
+body {
+  background-color: #333333;
+  overflow: hidden;
+}
+
+h1, h2, h3, h4 {
+  margin: 15px auto 25px auto;
+  text-align: center;
+}
+
+p {
+  margin-bottom: 0.7em;
+  margin-top: 0.7em;
+  line-height: 1.4em;
+}
+
+ul, ol {
+  margin-bottom: 0;
+  margin-top: 0;
+  padding-left: 1em;
+  line-height: 1.4em;
+}
+
+ul code, p code, pre {
+  padding: 0.05em 0.2em;
+  margin: 0;
+  font-size: 85%;
+  background-color: rgba(129,136,150,.2);
+  border-radius: 3px;
+}
+
+strong, b {
+  letter-spacing: 1px;
+}
+
+a, a:visited {
+  color: cadetblue;
+  text-decoration: none;
+}
+
+.codemirror-container {
+  position: relative;
+  height: 100%;
+  box-sizing: border-box;
+  padding-top: 30px;
+  font-size: 16px;
+}
+
+.react-codemirror2, .CodeMirror {
+  height: 100%;
+  background-color: whitesmoke;
+  border-right: 1px solid darkseagreen;
+}
+
+.cm-s-base16-dark.CodeMirror, span.cm-bracket {
+  background: whitesmoke;
+  color: darkblue;
+}
+
+.cm-s-base16-dark .CodeMirror-linenumber { color: lightgrey; }
+.cm-s-base16-dark .CodeMirror-gutters { background: #333333; }
+.cm-s-base16-dark span.cm-variable-2 { color: darkred; }
+.cm-s-base16-dark .CodeMirror-cursor { border-left: 1px solid black; }
+.cm-s-base16-dark div.CodeMirror-selected { background: palegoldenrod; }
+.cm-s-base16-dark span.cm-comment { color: black; }
+.cm-s-base16-dark span.cm-string { color: lightseagreen; }
+
+textarea:focus {
+  outline: 0;
+}
+
+input[type="text"], textarea {
+  background-color: #333333;
+  color: lightgrey;
+  font-size: 18px;
+}
+
+header {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 60%;
+  height: 30px;
+  background-color: darkgray;
+  border-right: 1px solid darkseagreen;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+  z-index: 1000;
+}
+
+header .fa {
+  margin: 0 10px;
+  font-size: 20px;
+  color: black;
+}
+
+header .fa:hover {
+  color: lightgrey;
+  cursor: pointer;
+}
+
+.side-by-side-container {
+  display: flex;
+  justify-content: space-between;
+  height: 100vh;
+}
+
+.side-by-side-container > :first-child {
+  width: 60%;
+  height: 100%;
+}
+
+.side-by-side-container > :last-child {
+  width: 40%;
+  height: 100%;
+}
+
+.slide-index {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.slide-index .slides {
+  margin: 0;
+  padding: 0;
+  height: 70%;
+  overflow: auto;
+}
+
+.slide-index .slide-notes {
+  background-color: whitesmoke;
+  border-top: solid 1px darkseagreen;
+  height: 30%;
+  width: 100%;
+  overflow: auto;
+}
+
+.slide, .slide-notes {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2%;
+  box-sizing: border-box;
+}
+
+.slide {
+  background-color: #333333;
+  color: lightgrey;
+  width: 100vw;
+  height: 100vh;
+  font-size: 5vh;
+}
+
+.slide-notes {
+  background-color: whitesmoke;
+  color: #333333;
+  width: 100vw;
+  height: 100vh;
+  font-size: 2.5vh;
+  overflow: auto;
+}
+
+.slide-index .slide {
+  position: relative;
+  left: -29.5vw;
+  top: 32vh;
+  transform: scale(.32);
+  margin: -65vh auto;
+  border: solid 5px whitesmoke;
+}
+
+.slide-index .slides:after {
+  content: '';
+  display: block;
+  height: 65vh;
+}
+
+.slide.selected {
+  border-color: darkseagreen;
+}
+
+.present-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: lightgrey;
+}
+
+.present-slide, .present-replace-container {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.present-replace-container {
+  min-width: 40%;
+  max-width: 60%;
+}
+
+.present-replace-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.markdown {
+  max-width: 100%;
+  overflow: auto;
+}
+
+.markdown img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  max-height: 80vh;
+}
+
+.markdown pre {
+  font-family: monospace;
+  margin: 15px;
+  padding: 10px;
+  box-sizing: border-box;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.progressbar-progress {
+  position: absolute;
+  bottom: 0;
+  height: 5px;
+  background-color: darkseagreen;
+}
+
+.fade-wait-leave {
+  opacity: 1;
+}
+
+.fade-wait-leave.fade-wait-leave-active {
+  opacity: 0;
+  transition: opacity .3s ease-in;
+}
+
+.fade-wait-enter {
+  opacity: 0;
+}
+
+.fade-wait-enter.fade-wait-enter-active {
+  opacity: 1;
+  /* Delay the enter animation until the leave completes */
+  transition: opacity .3s ease-in .5s;
+}
+
+.fade-wait-height {
+  transition: height .3s ease-in-out;
+}
+
+.render-arrows {
+  display: flex;
+  justify-content: space-between;
+}
+
+.fa.fa-arrow-right, .fa.fa-arrow-left {
+  color: whitesmoke;
+}
+
+.fa.fa-arrow-right:hover, .fa.fa-arrow-left:hover {
+  cursor: pointer;
+}
+
+table {
+  margin: 1.5em 0;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 2px solid gray;
+}
+
+th, td {
+  padding: 0.5em;
+  padding-left: 1em;
+  padding-right: 1em;
+}

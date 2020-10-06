@@ -4,4 +4,7 @@ bundle.js.map
 *.swp
 /*.env
 .DS_Store
-
+bundle.js
+assets/*
+!assets/essential-assets
+slides.md
